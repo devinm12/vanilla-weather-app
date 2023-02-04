@@ -17,18 +17,23 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <h1>Bedford,TX</h1>
-          <ul>
-            <l1>Saturday 09:00</l1>
-            <li>Partly Cloudy</li>
-          </ul>
+          <div class="overview">
+            <h1>Bedford,TX</h1>
+            <ul>
+              <l1>Saturday 09:00</l1>
+              <li>Partly Cloudy</li>
+            </ul>
+          </div>
           <div class="row">
             <div class="col-6">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="partly cloudy"
-              />
-              42 °F|°C
+              <div class="weather-temperature d-flex">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="partly cloudy"
+                />
+                <strong>42</strong
+                ><span class="units">°F|<a href="#">°C</a></span>
+              </div>
             </div>
             <div class="col-6">
               <ul>
