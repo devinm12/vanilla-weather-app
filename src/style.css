@@ -46,3 +46,11 @@ li:first-letter {
 .units {
   font-size: 16px;
 }
+a {
+  text-decoration: none;
+}
+.weather-temperature .active {
+  color: #202124;
+  cursor: default;
+  text-decoration: none;
+}
