@@ -54,3 +54,8 @@ a {
   cursor: default;
   text-decoration: none;
 }
+.weather-forecast-date {
+  margin-top: 20px;
+
+  color: black;
+}
