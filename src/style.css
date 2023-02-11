@@ -54,8 +54,18 @@ a {
   cursor: default;
   text-decoration: none;
 }
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+  width: 75px;
+}
 .weather-forecast-date {
   margin-top: 20px;
-
-  color: black;
+}
+.weather-forecast-temperatures {
+  font-size: 12px;
+}
+.weather-forecast-temperatures-minimum {
+  opacity: 0.6;
 }
