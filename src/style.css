@@ -58,13 +58,12 @@ a {
   text-align: center;
   margin-top: 20px;
   color: black;
-  width: 75px;
 }
 .weather-forecast-date {
-  margin-top: 20px;
+  font-size: 16px;
 }
 .weather-forecast-temperatures {
-  font-size: 12px;
+  font-size: 13px;
 }
 .weather-forecast-temperatures-minimum {
   opacity: 0.6;
