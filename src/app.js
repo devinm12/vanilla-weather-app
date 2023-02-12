@@ -22,8 +22,6 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
-  console.log(response.data.daily[0].condition.icon);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -74,8 +72,7 @@ function formatDay(timestamp) {
 function getForecast(coordinates) {
   let apiKey = `t88f4d38b82a7fd38bfe80o03b85f024`;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
-  console.log(coordinates);
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -108,6 +105,20 @@ function search(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
+function getCurrentLocationTemperature(position) {
+  let apiKey = `t88f4d38b82a7fd38bfe80o03b85f024`;
+  let units = "imperial";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getCurrentLocationTemperature);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
@@ -117,4 +128,7 @@ function handleSubmit(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-search("Dallas");
+search("Austin");
+
+let currentLocationElement = document.querySelector("#current-location-btn");
+currentLocationElement.addEventListener("click", getCurrentPosition);
